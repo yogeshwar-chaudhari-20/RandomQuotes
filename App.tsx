@@ -2,7 +2,6 @@ import 'react-native-gesture-handler'
 import ApplicationNavigator from '@/Navigators/Application'
 import { persistor, store } from '@/Stores'
 import React from 'react'
-import Toast from 'react-native-toast-message'
 import { Provider } from 'react-redux'
 import { MD3LightTheme as DefaultTheme, PaperProvider } from 'react-native-paper'
 import { PersistGate } from 'redux-persist/integration/react'
@@ -33,7 +32,6 @@ const App = () => (
             <View style={styles.container}>
               <StatusBar barStyle={'dark-content'} />
               <ApplicationNavigator />
-              <Toast />
             </View>
           </QueryClientProvider>
         </PersistGate>
