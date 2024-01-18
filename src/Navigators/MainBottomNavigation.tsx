@@ -1,10 +1,10 @@
 import React from 'react'
 import { Ionicons } from '@expo/vector-icons'
-import { HomeScreen } from '@/Containers/Home/HomeScreen'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import { PlaceholderScreen } from '@/Containers/PlaceholderScreen'
+import { HomeScreen } from '@/Containers/Home/HomeScreen'
 import { SearchScreen } from '@/Containers/Search/SearchScreen'
 import { BookmarkScreen } from '@/Containers/Bookmark/BookmarkScreen'
+import { PlaceholderScreen } from '@/Containers/PlaceholderScreen'
 
 const Tab = createBottomTabNavigator()
 

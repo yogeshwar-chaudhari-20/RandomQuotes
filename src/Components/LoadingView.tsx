@@ -1,10 +1,11 @@
 import { StyleSheet, View, ActivityIndicator } from 'react-native'
 import React from 'react'
-import { Colors } from '@/Constants'
+import { useTheme } from 'react-native-paper'
 
 type Props = {}
 
 const LoadingView = (props: Props) => {
+  const theme = useTheme()
   return (
     <View
       style={{
@@ -13,7 +14,7 @@ const LoadingView = (props: Props) => {
         alignContent: 'center',
       }}
     >
-      <ActivityIndicator size='large' color={Colors.blue} />
+      <ActivityIndicator size='large' color={theme.colors.primary} />
     </View>
   )
 }

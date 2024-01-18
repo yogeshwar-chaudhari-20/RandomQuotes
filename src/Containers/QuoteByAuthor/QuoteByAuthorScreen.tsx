@@ -1,9 +1,5 @@
 import React from 'react'
 import { FlatList, StyleSheet, Text, View, Image } from 'react-native'
-import { Colors, Fonts, Texts } from '@/Constants'
-import HeaderNormal from '@/Components/HeaderNormal'
-import { SCREEN_WIDTH } from '@/Utils/common'
-import { Images } from '@/Assets'
 import { StackActions, useNavigation, useRoute } from '@react-navigation/native'
 import { useListQuoteByAuthor } from '@/Hooks/useListQuoteByAuthor'
 import { TouchableOpacity } from 'react-native-gesture-handler'
@@ -25,7 +21,7 @@ const QuoteByAuthorScreen = (props: Props) => {
         style={styles.viewItem}
         onPress={() => {
           navigation.dispatch(
-            StackActions.push(Texts.QuoteDetailsScreen, {
+            StackActions.push('QuoteDetailsScreen', {
               data: item,
             })
           )
@@ -49,20 +45,21 @@ const QuoteByAuthorScreen = (props: Props) => {
   }
   return (
     <View style={styles.container}>
-      <HeaderNormal title={'Author ' + data?.name} />
+      {/* <HeaderNormal title={'Author ' + data?.name} /> */}
       <View style={styles.body}>
         <FlatList
           ListHeaderComponent={() => {
             return (
-              <Image
-                source={Images.Bg_Detail}
-                style={{
-                  marginTop: -80,
-                  width: SCREEN_WIDTH - 40,
-                  height: 200,
-                  resizeMode: 'contain',
-                }}
-              />
+              <></>
+              // <Image
+              //   source={Images.Bg_Detail}
+              //   style={{
+              //     marginTop: -80,
+              //     width: SCREEN_WIDTH - 40,
+              //     height: 200,
+              //     resizeMode: 'contain',
+              //   }}
+              // />
             )
           }}
           contentContainerStyle={{
@@ -83,7 +80,6 @@ export default QuoteByAuthorScreen
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.white,
   },
   body: {
     flex: 1,
@@ -101,7 +97,6 @@ const styles = StyleSheet.create({
   },
   viewStt: {
     borderWidth: 1,
-    backgroundColor: Colors.white,
     width: 44,
     height: 44,
     borderRadius: 44,
@@ -111,13 +106,9 @@ const styles = StyleSheet.create({
   },
   txtStt: {
     fontSize: 16,
-    fontFamily: Fonts.ComingSoonRegular,
-    color: Colors.black,
   },
   txtItem: {
     fontSize: 16,
-    //     fontFamily: Fonts.ComingSoonRegular,
-    color: Colors.black,
     textAlign: 'center',
   },
 })

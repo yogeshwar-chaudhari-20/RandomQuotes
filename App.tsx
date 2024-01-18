@@ -1,9 +1,7 @@
 import 'react-native-gesture-handler'
-import { Colors } from '@/Constants'
 import ApplicationNavigator from '@/Navigators/Application'
 import { persistor, store } from '@/Stores'
 import React from 'react'
-import Toast from 'react-native-toast-message'
 import { Provider } from 'react-redux'
 import { MD3LightTheme as DefaultTheme, PaperProvider } from 'react-native-paper'
 import { PersistGate } from 'redux-persist/integration/react'
@@ -32,9 +30,8 @@ const App = () => (
         <PersistGate persistor={persistor} loading={null}>
           <QueryClientProvider client={queryClient}>
             <View style={styles.container}>
-              <StatusBar barStyle={'dark-content'} backgroundColor={Colors.white} />
+              <StatusBar barStyle={'dark-content'} />
               <ApplicationNavigator />
-              <Toast />
             </View>
           </QueryClientProvider>
         </PersistGate>
