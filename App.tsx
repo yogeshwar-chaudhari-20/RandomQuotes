@@ -1,5 +1,4 @@
 import 'react-native-gesture-handler'
-import { Colors } from '@/Constants'
 import ApplicationNavigator from '@/Navigators/Application'
 import { persistor, store } from '@/Stores'
 import React from 'react'
@@ -32,7 +31,7 @@ const App = () => (
         <PersistGate persistor={persistor} loading={null}>
           <QueryClientProvider client={queryClient}>
             <View style={styles.container}>
-              <StatusBar barStyle={'dark-content'} backgroundColor={Colors.white} />
+              <StatusBar barStyle={'dark-content'} />
               <ApplicationNavigator />
               <Toast />
             </View>
